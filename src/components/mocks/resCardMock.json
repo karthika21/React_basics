@@ -7,6 +7,7 @@
     "costForTwo": "₹300 for two",
     "cuisines": ["American", "Snacks", "Turkish", "Portuguese", "Continental"],
     "avgRating": 4.3,
+    "promoted": true,
     "feeDetails": {
       "restaurantId": "65797",
       "fees": [

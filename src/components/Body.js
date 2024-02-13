@@ -4,7 +4,6 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
-import { RES_URL } from "../utils/constants";
 
 const Body = () => {
   // Local State Variable - Super powerful variable
@@ -23,11 +22,10 @@ const Body = () => {
 
   const fetchData = async () => {
     const data = await fetch(
-      RES_URL
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
-    console.log(json);
 
     // Optional Chaining
     setListOfRestraunt(
@@ -69,7 +67,7 @@ const Body = () => {
             onClick={() => {
               // Filter the restraunt cards and update the UI
               // searchText
-              console.log(searchText);
+              // console.log(searchText);
 
               const filteredRestaurant = listOfRestaurants.filter((res) =>
                 res.info.name.toLowerCase().includes(searchText.toLowerCase())
