@@ -49,7 +49,7 @@ it("Should render Header Component with a Cart item ", () => {
   expect(cartItems).toBeInTheDocument();
 });
 
-it("Should change Login Button to Logout on click", () => {
+it("Should change Login Button to Logout on click and vice-versa", () => {
   render(
     <BrowserRouter>
       <Provider store={appStore}>
@@ -65,4 +65,8 @@ it("Should change Login Button to Logout on click", () => {
   const logoutButton = screen.getByRole("button", { name: "Logout" });
 
   expect(logoutButton).toBeInTheDocument();
+
+  fireEvent.click(logoutButton);
+
+  expect(loginButton).toBeInTheDocument();
 });
